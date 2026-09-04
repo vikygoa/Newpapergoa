@@ -1,0 +1,33 @@
+{
+  "updated": "Initial data",
+  "papers": [
+    {
+      "name": "THE GOAN EVERYDAY",
+      "description": "Goa's Leading English Daily Newspaper",
+      "published": "Latest",
+      "edition_url": "https://epaper.thegoan.net/edition/THE-GOAN-EVERYDAY/10711",
+      "read_url": "https://epaper.thegoan.net/edition/THE-GOAN-EVERYDAY/10711"
+    },
+    {
+      "name": "GOAN VARTA",
+      "description": "Goa's Leading Marathi Daily Newspaper",
+      "published": "Latest",
+      "edition_url": "https://epaper.thegoan.net/edition/GOAN-VARTA/9849",
+      "read_url": "https://epaper.thegoan.net/edition/GOAN-VARTA/9849"
+    },
+    {
+      "name": "BHAANGARBHUIN",
+      "description": "Goa's Konkani Daily Newspaper",
+      "published": "Latest",
+      "edition_url": "https://epaper.thegoan.net/edition/BHAANGARBHUIN/23246",
+      "read_url": "https://epaper.thegoan.net/edition/BHAANGARBHUIN/23246"
+    },
+    {
+      "name": "KONKANSAAD",
+      "description": "KONKANSAAD Marathi Newspaper",
+      "published": "Latest",
+      "edition_url": "https://epaper.thegoan.net/edition/KONKANSAAD/37473",
+      "read_url": "https://epaper.thegoan.net/edition/KONKANSAAD/37473"
+    }
+  ]
+}
