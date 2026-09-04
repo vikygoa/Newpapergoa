@@ -8,6 +8,8 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 jobs:
   update:
@@ -35,4 +37,18 @@ jobs:
           git add data.json
           git diff --cached --quiet || git commit -m "Update newspaper editions"
           git push
-          
+
+      - name: Prepare GitHub Pages files
+        run: |
+          mkdir -p _site
+          cp index.html _site/index.html
+          cp data.json _site/data.json
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "_site"
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
+        
