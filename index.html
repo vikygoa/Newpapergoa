@@ -2,97 +2,292 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#0b63ce">
-<title>Goa E-Papers — Daily Goa Newspapers</title>
-<meta name="description" content="Read the latest Goa newspapers and e-paper editions in one place.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<title>GOA E-PAPERS | All Goan Newspapers in One Place</title>
+<meta name="description" content="Read the latest Goa newspapers and e-papers in one place.">
 <style>
-:root{--blue:#0b63ce;--ink:#10213b;--muted:#64748b;--bg:#f6f9fc;--line:#e5edf6}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root{
+  --navy:#062e59;
+  --blue:#0877c9;
+  --light:#eef7ff;
+  --text:#071a32;
+  --muted:#687382;
+  --card:#fff;
+  --border:#e4eaf0;
+}
+
 *{box-sizing:border-box}
-body{margin:0;font-family:Inter,Arial,Helvetica,sans-serif;background:var(--bg);color:var(--ink)}
-header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
-.nav{max-width:1120px;margin:auto;min-height:86px;display:flex;align-items:center;justify-content:space-between;padding:12px 22px}
-.icon{width:44px;height:44px;border:0;background:transparent;border-radius:12px;font-size:27px;color:var(--ink)}
-.brand{text-align:center;line-height:1}
-.brand h1{margin:0;font-size:30px;letter-spacing:.5px;font-weight:850}
-.brand span{display:block;margin-top:7px;font-size:11px;letter-spacing:4px;color:#52667f}
-.container{max-width:1120px;margin:auto;padding:18px 22px 34px}
-.hero{background:linear-gradient(135deg,#eaf5ff,#f8fbff);border:1px solid #d9eaf9;border-radius:20px;padding:16px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:20px}
-.hero-left{display:flex;align-items:center;gap:12px;font-weight:700;color:#08498f}
-.paper-icon{font-size:25px}
-.badge{background:#fff;border:1px solid #e3edf7;padding:9px 13px;border-radius:999px;font-size:13px;white-space:nowrap}
-.dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:#e31d25;margin-right:7px}
-.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
-.card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:16px;box-shadow:0 7px 24px rgba(23,52,84,.07);transition:.18s}
-.card:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(23,52,84,.12)}
-.logo-wrap{height:145px;display:flex;align-items:center;justify-content:center;border-radius:16px;background:#fff;margin-bottom:10px;overflow:hidden}
-.logo{width:100%;height:100%;object-fit:contain}
-h2{font-size:20px;margin:4px 2px 5px}
-.desc{color:var(--muted);font-size:14px;min-height:20px}
-.meta{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:13px 2px 14px;color:#34465e;font-size:14px}
-.lang{font-weight:700;color:#6b7d93}
-.date strong{color:var(--ink)}
-.button{display:flex;align-items:center;justify-content:center;gap:9px;text-decoration:none;color:#fff;background:var(--blue);padding:13px;border-radius:13px;font-weight:800;font-size:16px}
-.button .ext{margin-left:auto;font-size:19px}
-.status{margin-top:18px;text-align:center;color:#6b7d93;font-size:12px}
-footer{max-width:1120px;margin:auto;padding:5px 22px 28px;text-align:center;color:#718096;font-size:13px}
-@media(max-width:720px){.nav{min-height:74px;padding:9px 14px}.brand h1{font-size:23px}.brand span{font-size:8px;letter-spacing:2.5px}.container{padding:13px 12px 25px}.hero{padding:13px;border-radius:16px}.hero-left{font-size:14px}.grid{grid-template-columns:1fr;gap:14px}.card{border-radius:19px;padding:13px}.logo-wrap{height:125px}.card h2{font-size:19px}.button{font-size:16px}}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:#f7fafc;
+  color:var(--text);
+  font-family:Inter,Arial,sans-serif;
+}
+a{text-decoration:none;color:inherit}
+
+.header{
+  height:92px;
+  background:#fff;
+  border-bottom:1px solid #e7edf2;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  padding:8px 28px;
+}
+.menu,.search{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  width:44px;height:44px;
+  border:0;background:transparent;
+  cursor:pointer;
+  display:grid;place-items:center;
+}
+.menu{left:24px}
+.search{right:24px}
+.menu span,.menu span:before,.menu span:after{
+  width:30px;height:3px;background:var(--text);display:block;
+  border-radius:4px;content:"";position:absolute;
+}
+.menu span:before{transform:translateY(-9px)}
+.menu span:after{transform:translateY(9px)}
+.search:before{
+  content:"";width:19px;height:19px;border:3px solid var(--text);
+  border-radius:50%;display:block;position:absolute;
+}
+.search:after{
+  content:"";width:10px;height:3px;background:var(--text);
+  transform:rotate(45deg) translate(9px,9px);border-radius:3px;
+}
+.brand{
+  height:76px;max-width:480px;width:min(78vw,480px);
+  object-fit:contain;
+}
+
+.notice{
+  margin:10px auto 20px;
+  width:calc(100% - 56px);
+  max-width:970px;
+  min-height:58px;
+  border:1px solid #d9eaf8;
+  background:#eef7ff;
+  border-radius:20px;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:10px 18px;
+  color:var(--navy);
+  font-size:17px;font-weight:600;
+}
+.notice-left{display:flex;align-items:center;gap:12px}
+.notice-icon{
+  width:30px;height:30px;border:3px solid #075d9e;border-radius:5px;
+  display:grid;place-items:center;font-size:14px;font-weight:800;
+}
+.updated{
+  background:#fff;border:1px solid #e2e9ef;border-radius:30px;
+  padding:9px 17px;font-weight:500;color:#263445;
+  box-shadow:0 1px 4px rgba(0,0,0,.03);
+}
+.dot{display:inline-block;width:11px;height:11px;border-radius:50%;background:#e21e2b;margin-right:9px}
+
+.container{
+  width:calc(100% - 56px);
+  max-width:970px;
+  margin:0 auto 24px;
+}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:20px;
+}
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:22px;
+  padding:14px 14px 16px;
+  box-shadow:0 5px 18px rgba(13,45,75,.07);
+  overflow:hidden;
+  transition:transform .25s ease,box-shadow .25s ease;
+}
+.card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 12px 28px rgba(13,45,75,.13);
+}
+.logo-box{
+  height:116px;
+  display:flex;align-items:center;justify-content:center;
+  padding:7px 12px 3px;
+  background:#fff;
+}
+.paper-logo{
+  max-width:100%;width:auto;height:100%;object-fit:contain;
+}
+.card h2{
+  margin:9px 9px 3px;
+  font-size:21px;line-height:1.18;
+  font-weight:800;letter-spacing:-.4px;
+}
+.desc{
+  margin:0 9px 10px;
+  color:var(--muted);
+  font-size:15px;line-height:1.35;
+}
+.meta{
+  margin:0 9px 13px;
+  display:flex;justify-content:space-between;align-items:center;
+  gap:10px;color:#536170;font-size:14px;
+}
+.lang{font-weight:700;color:#6d7985}
+.read{
+  position:relative;overflow:hidden;
+  margin:0 9px;
+  min-height:54px;
+  border-radius:16px;
+  display:flex;align-items:center;justify-content:center;
+  color:white;font-size:17px;font-weight:800;
+  background:var(--accent,#0877c9);
+  box-shadow:0 5px 12px color-mix(in srgb, var(--accent,#0877c9) 28%, transparent);
+  transition:transform .18s ease,filter .18s ease;
+}
+.read:before{
+  content:"";
+  position:absolute;inset:0;
+  background:linear-gradient(110deg,transparent 25%,rgba(255,255,255,.35) 48%,transparent 70%);
+  transform:translateX(-120%);
+  animation:shine 3.2s infinite;
+}
+.read span{position:relative;z-index:1}
+.read:hover{transform:scale(1.015);filter:brightness(1.05)}
+.read:active{transform:scale(.98)}
+@keyframes shine{
+  0%,55%{transform:translateX(-120%)}
+  80%,100%{transform:translateX(120%)}
+}
+
+.footer{
+  width:calc(100% - 56px);max-width:970px;
+  margin:0 auto 18px;
+  padding:13px 15px;
+  text-align:center;
+  color:#596471;
+  background:#f0f3f6;
+  border-radius:16px;
+  font-size:14px;
+}
+.heart{color:#e52335}
+
+@media(max-width:600px){
+  .header{height:92px;padding:7px 15px}
+  .menu{left:12px}.search{right:12px}
+  .brand{width:min(68vw,350px);height:70px}
+  .notice{
+    width:calc(100% - 40px);
+    margin:10px auto 18px;
+    border-radius:18px;
+    min-height:70px;
+    padding:10px 13px;
+    font-size:15px;
+  }
+  .notice-left{gap:9px;line-height:1.2}
+  .updated{padding:8px 11px;white-space:nowrap;font-size:13px}
+  .dot{width:9px;height:9px;margin-right:6px}
+  .container{width:calc(100% - 40px)}
+  .grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:12px;
+  }
+  .card{border-radius:17px;padding:9px 8px 10px}
+  .logo-box{height:92px;padding:4px 3px}
+  .card h2{font-size:15px;margin:7px 4px 2px}
+  .desc{font-size:11px;margin:0 4px 7px}
+  .meta{font-size:10px;margin:0 4px 8px}
+  .read{
+    min-height:42px;border-radius:12px;
+    font-size:12px;margin:0 3px;
+  }
+  .footer{width:calc(100% - 40px);font-size:12px}
+}
+@media(min-width:1000px){
+  .container,.notice,.footer{max-width:1000px}
+  .grid{gap:22px}
+  .logo-box{height:130px}
+}
 </style>
 </head>
 <body>
-<header>
-  <div class="nav">
-    <button class="icon" aria-label="Menu">☰</button>
-    <div class="brand">
-      <h1>GOA E-PAPERS</h1>
-      <span>ALL GOAN NEWSPAPERS IN ONE PLACE</span>
-    </div>
-    <button class="icon" aria-label="Search">⌕</button>
-  </div>
+
+<header class="header">
+  <button class="menu" aria-label="Menu"><span></span></button>
+  <img class="brand" src="assets/goa-e-papers-logo.svg" alt="GOA E-PAPERS">
+  <button class="search" aria-label="Search"></button>
 </header>
 
-<main class="container">
-  <section class="hero">
-    <div class="hero-left"><span class="paper-icon">▣</span><span>Read latest e-papers of Goa's leading newspapers</span></div>
-    <div class="badge"><span class="dot"></span>Updated Daily</div>
-  </section>
+<section class="notice">
+  <div class="notice-left">
+    <div class="notice-icon">▣</div>
+    <div>Read latest e-papers of Goa's leading newspapers</div>
+  </div>
+  <div class="updated"><span class="dot"></span>Updated Daily</div>
+</section>
 
-  <section class="grid" id="papers"></section>
-  <div class="status" id="status">Loading latest editions…</div>
+<main class="container">
+  <div id="newspapers" class="grid"></div>
 </main>
 
-<footer>
-  Made with <b>♥</b> for Goa &nbsp;|&nbsp; Stay Informed &nbsp;|&nbsp; Read Local &nbsp;|&nbsp; Support Journalism
+<footer class="footer">
+  Made with <span class="heart">♥</span> for Goa &nbsp;|&nbsp; Stay Informed &nbsp;|&nbsp; Read Local &nbsp;|&nbsp; Support Journalism
 </footer>
 
 <script>
-const papersEl=document.getElementById("papers");
-const statusEl=document.getElementById("status");
-function esc(v){return String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]))}
-async function loadPapers(){
- try{
-  const r=await fetch("data.json?t="+Date.now(),{cache:"no-store"});
-  if(!r.ok)throw new Error("data");
-  const d=await r.json();
-  papersEl.innerHTML=d.papers.map(p=>`
-   <article class="card">
-    <div class="logo-wrap"><img class="logo" src="${esc(p.logo)}" alt="${esc(p.name)} logo" loading="lazy"></div>
-    <h2>${esc(p.name)}</h2>
-    <div class="desc">${esc(p.description)}</div>
-    <div class="meta">
-      <span class="lang">${esc(p.language||"Newspaper")}</span>
-      <span class="date">Published: <strong>${esc(p.published||"Latest")}</strong></span>
-    </div>
-    <a class="button" href="${esc(p.read_url)}" target="_blank" rel="noopener noreferrer">
-      <span>▣</span><span>Read Newspaper</span><span class="ext">↗</span>
-    </a>
-   </article>`).join("");
-  statusEl.textContent="Last automatic update: "+(d.updated||"Latest");
- }catch(e){
-  statusEl.textContent="Unable to load the latest newspaper information.";
- }
+const fallback = [
+  {name:"THE GOAN EVERYDAY",description:"Goa's Leading English Daily Newspaper",language:"English",color:"#0877c9",logo:"assets/goan-everyday.svg",url:"https://epaper.thegoan.net/edition/THE-GOAN-EVERYDAY/10711/"},
+  {name:"GOAN VARTA",description:"Goa's Leading Marathi Daily Newspaper",language:"Marathi",color:"#ff6a00",logo:"assets/goan-varta.svg",url:"https://epaper.thegoan.net/edition/GOAN-VARTA/9849/"},
+  {name:"BHAANGARBHUIN",description:"Goa's Konkani Daily Newspaper",language:"Konkani",color:"#d10b0b",logo:"assets/bhaangarbhuin.svg",url:"https://epaper.thegoan.net/edition/BHAANGARBHUIN/23246/"},
+  {name:"KONKANSAAD",description:"KONKANSAAD Marathi Newspaper",language:"Marathi",color:"#0877c9",logo:"assets/konkansad.svg",url:"https://epaper.thegoan.net/edition/KONKANSAAD/37473/"},
+  {name:"O HERALDO",description:"Goa's Oldest English Daily Newspaper",language:"English",color:"#078aa8",logo:"assets/o-heraldo.svg",url:"https://epaper.heraldgoa.in/epaper/oheraldo/04-09-2026"},
+  {name:"DAINIK HERALD",description:"Goa's Leading Marathi Daily Newspaper",language:"Marathi",color:"#0bb45a",logo:"assets/dainik-herald.svg",url:"https://epaper.heraldgoa.in/epaper/dainik-herald/04-09-2026"},
+  {name:"NAVHIND TIMES",description:"Goa's Trusted English Daily Newspaper",language:"English",color:"#6d2acb",logo:"assets/navhind-times.svg",url:"https://epaper.navhindtimes.in/"},
+  {name:"LOKMAT (GOA EDITION)",description:"Maharashtra's No.1 Marathi Daily (Goa Edition)",language:"Marathi",color:"#ed2630",logo:"assets/lokmat.svg",url:"https://epaper.navhindtimes.in/"}
+];
+
+function esc(v){return String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+
+async function load(){
+  let papers=fallback;
+  try{
+    const r=await fetch("data.json?"+Date.now(),{cache:"no-store"});
+    if(r.ok){
+      const d=await r.json();
+      if(Array.isArray(d.papers)&&d.papers.length) papers=d.papers.map((p,i)=>({
+        ...fallback[i],
+        ...p,
+        logo:p.logo || fallback[i]?.logo
+      }));
+    }
+  }catch(e){}
+  document.getElementById("newspapers").innerHTML=papers.map((p,i)=>`
+    <article class="card">
+      <div class="logo-box">
+        <img class="paper-logo" src="${esc(p.logo||fallback[i]?.logo||"")}" alt="${esc(p.name)} logo"
+             onerror="this.style.display='none'">
+      </div>
+      <h2>${esc(p.name)}</h2>
+      <p class="desc">${esc(p.description||"Goa Newspaper")}</p>
+      <div class="meta">
+        <span class="lang">${esc(p.language||"Newspaper")}</span>
+        <span>Published: <b>${esc(p.published||"Today")}</b></span>
+      </div>
+      <a class="read" style="--accent:${esc(p.color||fallback[i]?.color||"#0877c9")}"
+         href="${esc(p.url||"#")}" target="_blank" rel="noopener noreferrer">
+        <span>▣ &nbsp; Read Newspaper &nbsp; ↗</span>
+      </a>
+    </article>`).join("");
 }
-loadPapers();
+load();
 </script>
 </body>
 </html>
