@@ -2,8 +2,8 @@ name: Update Goan E-Papers
 
 on:
   schedule:
-    # Every day at 04:00 UTC = 09:30 AM IST
-    - cron: "0 4 * * *"
+    # Every day at 05:00 AM IST = 11:30 PM UTC (previous day)
+    - cron: "30 23 * * *"
   workflow_dispatch:
 
 permissions:
@@ -51,4 +51,3 @@ jobs:
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
-        
