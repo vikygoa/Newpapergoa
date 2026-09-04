@@ -1,33 +1,47 @@
 {
-  "updated": "2026-09-04 12:30 UTC",
+  "updated": "Initial data",
   "papers": [
     {
       "name": "THE GOAN EVERYDAY",
       "description": "Goa's Leading English Daily Newspaper",
-      "published": "Sep 04, 2026",
+      "published": "Latest",
       "edition_url": "https://epaper.thegoan.net/edition/THE-GOAN-EVERYDAY/10711",
-      "read_url": "https://www.readwhere.com/read/r/4195117"
+      "read_url": "https://epaper.thegoan.net/edition/THE-GOAN-EVERYDAY/10711"
     },
     {
       "name": "GOAN VARTA",
       "description": "Goa's Leading Marathi Daily Newspaper",
-      "published": "Sep 04, 2026",
+      "published": "Latest",
       "edition_url": "https://epaper.thegoan.net/edition/GOAN-VARTA/9849",
-      "read_url": "https://www.readwhere.com/read/r/4195086"
+      "read_url": "https://epaper.thegoan.net/edition/GOAN-VARTA/9849"
     },
     {
       "name": "BHAANGARBHUIN",
       "description": "Goa's Konkani Daily Newspaper",
-      "published": "Sep 04, 2026",
+      "published": "Latest",
       "edition_url": "https://epaper.thegoan.net/edition/BHAANGARBHUIN/23246",
-      "read_url": "https://www.readwhere.com/read/r/4195029"
+      "read_url": "https://epaper.thegoan.net/edition/BHAANGARBHUIN/23246"
     },
     {
       "name": "KONKANSAAD",
       "description": "KONKANSAAD Marathi Newspaper",
-      "published": "Sep 04, 2026",
+      "published": "Latest",
       "edition_url": "https://epaper.thegoan.net/edition/KONKANSAAD/37473",
-      "read_url": "https://www.readwhere.com/read/r/4194961"
+      "read_url": "https://epaper.thegoan.net/edition/KONKANSAAD/37473"
+    },
+    {
+      "name": "O HERALDO",
+      "description": "Goa's English Daily Newspaper",
+      "published": "Sep 04, 2026",
+      "edition_url": "https://epaper.heraldgoa.in/epaper/oheraldo/04-09-2026",
+      "read_url": "https://epaper.heraldgoa.in/epaper/oheraldo/04-09-2026"
+    },
+    {
+      "name": "DAINIK HERALD",
+      "description": "Goa's Marathi Daily Newspaper",
+      "published": "Sep 04, 2026",
+      "edition_url": "https://epaper.heraldgoa.in/epaper/dainik-herald/04-09-2026",
+      "read_url": "https://epaper.heraldgoa.in/epaper/dainik-herald/04-09-2026"
     }
   ]
 }
