@@ -2,105 +2,96 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#111827">
-<title>Goa E-Paper | Daily Newspapers</title>
-<meta name="description" content="Read the latest Goa newspapers from their official e-paper editions.">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b63ce">
+<title>Goa E-Papers — Daily Goa Newspapers</title>
+<meta name="description" content="Read the latest Goa newspapers and e-paper editions in one place.">
 <style>
+:root{--blue:#0b63ce;--ink:#10213b;--muted:#64748b;--bg:#f6f9fc;--line:#e5edf6}
 *{box-sizing:border-box}
-body{
-  margin:0;
-  font-family:Arial,Helvetica,sans-serif;
-  background:#f3f4f6;
-  color:#111827;
-}
-header{
-  background:#111827;
-  color:white;
-  padding:22px 16px;
-  text-align:center;
-}
-header h1{margin:0;font-size:27px}
-header p{margin:7px 0 0;color:#d1d5db;font-size:14px}
-.container{max-width:850px;margin:auto;padding:18px}
-.status{
-  background:white;border-radius:14px;padding:14px 16px;margin-bottom:16px;
-  box-shadow:0 2px 10px rgba(0,0,0,.06);font-size:13px;color:#4b5563;
-}
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}
-.card{
-  background:white;border-radius:16px;padding:18px;
-  box-shadow:0 3px 14px rgba(0,0,0,.08);
-}
-.card h2{margin:0 0 6px;font-size:20px}
-.lang{font-size:13px;color:#6b7280;margin-bottom:14px}
-.date{font-size:13px;margin-bottom:15px;color:#374151}
-.button{
-  display:block;text-align:center;text-decoration:none;
-  background:#111827;color:white;padding:12px;border-radius:10px;
-  font-weight:bold;
-}
-.button:hover{opacity:.9}
-.error{color:#b91c1c}
-footer{text-align:center;padding:25px;color:#6b7280;font-size:12px}
-@media(max-width:650px){
-  .grid{grid-template-columns:1fr}
-  header h1{font-size:23px}
-}
+body{margin:0;font-family:Inter,Arial,Helvetica,sans-serif;background:var(--bg);color:var(--ink)}
+header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
+.nav{max-width:1120px;margin:auto;min-height:86px;display:flex;align-items:center;justify-content:space-between;padding:12px 22px}
+.icon{width:44px;height:44px;border:0;background:transparent;border-radius:12px;font-size:27px;color:var(--ink)}
+.brand{text-align:center;line-height:1}
+.brand h1{margin:0;font-size:30px;letter-spacing:.5px;font-weight:850}
+.brand span{display:block;margin-top:7px;font-size:11px;letter-spacing:4px;color:#52667f}
+.container{max-width:1120px;margin:auto;padding:18px 22px 34px}
+.hero{background:linear-gradient(135deg,#eaf5ff,#f8fbff);border:1px solid #d9eaf9;border-radius:20px;padding:16px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:20px}
+.hero-left{display:flex;align-items:center;gap:12px;font-weight:700;color:#08498f}
+.paper-icon{font-size:25px}
+.badge{background:#fff;border:1px solid #e3edf7;padding:9px 13px;border-radius:999px;font-size:13px;white-space:nowrap}
+.dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:#e31d25;margin-right:7px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:16px;box-shadow:0 7px 24px rgba(23,52,84,.07);transition:.18s}
+.card:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(23,52,84,.12)}
+.logo-wrap{height:145px;display:flex;align-items:center;justify-content:center;border-radius:16px;background:#fff;margin-bottom:10px;overflow:hidden}
+.logo{width:100%;height:100%;object-fit:contain}
+h2{font-size:20px;margin:4px 2px 5px}
+.desc{color:var(--muted);font-size:14px;min-height:20px}
+.meta{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:13px 2px 14px;color:#34465e;font-size:14px}
+.lang{font-weight:700;color:#6b7d93}
+.date strong{color:var(--ink)}
+.button{display:flex;align-items:center;justify-content:center;gap:9px;text-decoration:none;color:#fff;background:var(--blue);padding:13px;border-radius:13px;font-weight:800;font-size:16px}
+.button .ext{margin-left:auto;font-size:19px}
+.status{margin-top:18px;text-align:center;color:#6b7d93;font-size:12px}
+footer{max-width:1120px;margin:auto;padding:5px 22px 28px;text-align:center;color:#718096;font-size:13px}
+@media(max-width:720px){.nav{min-height:74px;padding:9px 14px}.brand h1{font-size:23px}.brand span{font-size:8px;letter-spacing:2.5px}.container{padding:13px 12px 25px}.hero{padding:13px;border-radius:16px}.hero-left{font-size:14px}.grid{grid-template-columns:1fr;gap:14px}.card{border-radius:19px;padding:13px}.logo-wrap{height:125px}.card h2{font-size:19px}.button{font-size:16px}}
 </style>
 </head>
 <body>
-
 <header>
-  <h1>📰 Goa E-Paper</h1>
-  <p>Latest editions • Updated automatically</p>
+  <div class="nav">
+    <button class="icon" aria-label="Menu">☰</button>
+    <div class="brand">
+      <h1>GOA E-PAPERS</h1>
+      <span>ALL GOAN NEWSPAPERS IN ONE PLACE</span>
+    </div>
+    <button class="icon" aria-label="Search">⌕</button>
+  </div>
 </header>
 
 <main class="container">
-  <div class="status" id="status">Checking latest editions…</div>
-  <div class="grid" id="papers"></div>
+  <section class="hero">
+    <div class="hero-left"><span class="paper-icon">▣</span><span>Read latest e-papers of Goa's leading newspapers</span></div>
+    <div class="badge"><span class="dot"></span>Updated Daily</div>
+  </section>
+
+  <section class="grid" id="papers"></section>
+  <div class="status" id="status">Loading latest editions…</div>
 </main>
 
 <footer>
-  Newspapers open on their official e-paper website.
+  Made with <b>♥</b> for Goa &nbsp;|&nbsp; Stay Informed &nbsp;|&nbsp; Read Local &nbsp;|&nbsp; Support Journalism
 </footer>
 
 <script>
-const statusEl = document.getElementById("status");
-const papersEl = document.getElementById("papers");
-
-function esc(value){
-  return String(value ?? "").replace(/[&<>"']/g, c => ({
-    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
-  }[c]));
-}
-
+const papersEl=document.getElementById("papers");
+const statusEl=document.getElementById("status");
+function esc(v){return String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]))}
 async function loadPapers(){
-  try{
-    // Cache-buster prevents an old data.json being kept by the browser.
-    const response = await fetch("data.json?t=" + Date.now(), {cache:"no-store"});
-    if(!response.ok) throw new Error("Could not load latest data.");
-    const data = await response.json();
-
-    papersEl.innerHTML = data.papers.map(p => `
-      <article class="card">
-        <h2>${esc(p.name)}</h2>
-        <div class="lang">${esc(p.description)}</div>
-        <div class="date">Published: <strong>${esc(p.published)}</strong></div>
-        <a class="button" href="${esc(p.read_url)}" target="_blank" rel="noopener noreferrer">
-          Read Newspaper
-        </a>
-      </article>
-    `).join("");
-
-    statusEl.textContent =
-      "Last automatic check: " + (data.updated || "Unknown");
-  }catch(err){
-    statusEl.className = "status error";
-    statusEl.textContent = "Unable to load the latest newspaper information.";
-  }
+ try{
+  const r=await fetch("data.json?t="+Date.now(),{cache:"no-store"});
+  if(!r.ok)throw new Error("data");
+  const d=await r.json();
+  papersEl.innerHTML=d.papers.map(p=>`
+   <article class="card">
+    <div class="logo-wrap"><img class="logo" src="${esc(p.logo)}" alt="${esc(p.name)} logo" loading="lazy"></div>
+    <h2>${esc(p.name)}</h2>
+    <div class="desc">${esc(p.description)}</div>
+    <div class="meta">
+      <span class="lang">${esc(p.language||"Newspaper")}</span>
+      <span class="date">Published: <strong>${esc(p.published||"Latest")}</strong></span>
+    </div>
+    <a class="button" href="${esc(p.read_url)}" target="_blank" rel="noopener noreferrer">
+      <span>▣</span><span>Read Newspaper</span><span class="ext">↗</span>
+    </a>
+   </article>`).join("");
+  statusEl.textContent="Last automatic update: "+(d.updated||"Latest");
+ }catch(e){
+  statusEl.textContent="Unable to load the latest newspaper information.";
+ }
 }
-
 loadPapers();
 </script>
 </body>
