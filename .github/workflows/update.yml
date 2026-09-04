@@ -1,4 +1,5 @@
-name: Update Goan E-Papers
+
+name: Update Goa E-Papers
 
 on:
   schedule:
@@ -41,8 +42,7 @@ jobs:
       - name: Prepare GitHub Pages files
         run: |
           mkdir -p _site
-          cp index.html _site/index.html
-          cp data.json _site/data.json
+          cp -r index.html data.json assets _site/
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
