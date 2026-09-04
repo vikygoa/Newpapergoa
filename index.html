@@ -2,292 +2,559 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
 <meta name="theme-color" content="#ffffff">
-<title>GOA E-PAPERS | All Goan Newspapers in One Place</title>
-<meta name="description" content="Read the latest Goa newspapers and e-papers in one place.">
+<meta name="description" content="GOA E-PAPERS — all Goan newspapers in one place.">
+<title>GOA E-PAPERS | All Goan Newspapers</title>
+
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
-:root{
-  --navy:#062e59;
-  --blue:#0877c9;
-  --light:#eef7ff;
-  --text:#071a32;
-  --muted:#687382;
-  --card:#fff;
-  --border:#e4eaf0;
-}
-
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
+html,body{margin:0;padding:0}
 body{
-  margin:0;
-  background:#f7fafc;
-  color:var(--text);
+  background:#f5f8fb;
+  color:#10233f;
   font-family:Inter,Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;
 }
-a{text-decoration:none;color:inherit}
+a{text-decoration:none}
+button,a{font:inherit}
 
+/* HEADER */
 .header{
   height:92px;
   background:#fff;
-  border-bottom:1px solid #e7edf2;
+  border-bottom:1px solid #e6ebf1;
+  display:grid;
+  grid-template-columns:90px 1fr 90px;
+  align-items:center;
+  padding:0 22px;
+}
+.header-btn{
+  width:48px;height:48px;
+  border:0;background:transparent;
+  color:#12233d;
+  font-size:32px;
+  cursor:pointer;
   display:flex;
   align-items:center;
   justify-content:center;
-  position:relative;
-  padding:8px 28px;
 }
-.menu,.search{
-  position:absolute;
-  top:50%;
-  transform:translateY(-50%);
-  width:44px;height:44px;
-  border:0;background:transparent;
-  cursor:pointer;
-  display:grid;place-items:center;
+.brand{text-align:center;line-height:1}
+.brand-title{
+  font-size:42px;
+  font-weight:800;
+  letter-spacing:-1.8px;
+  color:#123c6c;
 }
-.menu{left:24px}
-.search{right:24px}
-.menu span,.menu span:before,.menu span:after{
-  width:30px;height:3px;background:var(--text);display:block;
-  border-radius:4px;content:"";position:absolute;
+.brand-title span{color:#0877c9}
+.brand-subtitle{
+  margin-top:7px;
+  font-size:11px;
+  letter-spacing:4px;
+  font-weight:600;
+  color:#607084;
 }
-.menu span:before{transform:translateY(-9px)}
-.menu span:after{transform:translateY(9px)}
-.search:before{
-  content:"";width:19px;height:19px;border:3px solid var(--text);
-  border-radius:50%;display:block;position:absolute;
-}
-.search:after{
-  content:"";width:10px;height:3px;background:var(--text);
-  transform:rotate(45deg) translate(9px,9px);border-radius:3px;
-}
-.brand{
-  height:76px;max-width:480px;width:min(78vw,480px);
-  object-fit:contain;
+.search-btn{justify-self:end}
+
+/* CONTENT */
+.container{
+  width:min(1120px,calc(100% - 36px));
+  margin:0 auto;
+  padding:18px 0 20px;
 }
 
-.notice{
-  margin:10px auto 20px;
-  width:calc(100% - 56px);
-  max-width:970px;
-  min-height:58px;
-  border:1px solid #d9eaf8;
-  background:#eef7ff;
+.info-bar{
+  min-height:62px;
+  border:1px solid #d9e9f7;
+  background:#eaf5ff;
   border-radius:20px;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:10px 18px;
-  color:var(--navy);
-  font-size:17px;font-weight:600;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  padding:12px 18px 12px 22px;
+  margin-bottom:18px;
+  color:#164675;
+  font-size:17px;
+  font-weight:600;
 }
-.notice-left{display:flex;align-items:center;gap:12px}
-.notice-icon{
-  width:30px;height:30px;border:3px solid #075d9e;border-radius:5px;
-  display:grid;place-items:center;font-size:14px;font-weight:800;
+.info-left{display:flex;align-items:center;gap:13px;min-width:0}
+.info-icon{
+  width:30px;height:30px;
+  flex:0 0 30px;
+  border:2px solid #1165a5;
+  border-radius:5px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:17px;
 }
 .updated{
-  background:#fff;border:1px solid #e2e9ef;border-radius:30px;
-  padding:9px 17px;font-weight:500;color:#263445;
-  box-shadow:0 1px 4px rgba(0,0,0,.03);
+  background:#fff;
+  border:1px solid #e1e8ef;
+  border-radius:25px;
+  padding:10px 16px;
+  color:#25344a;
+  white-space:nowrap;
+  font-weight:500;
+  box-shadow:0 2px 8px rgba(15,45,75,.04);
 }
-.dot{display:inline-block;width:11px;height:11px;border-radius:50%;background:#e21e2b;margin-right:9px}
+.dot{
+  display:inline-block;
+  width:11px;height:11px;
+  background:#e32635;
+  border-radius:50%;
+  margin-right:9px;
+}
 
-.container{
-  width:calc(100% - 56px);
-  max-width:970px;
-  margin:0 auto 24px;
-}
+/* NEWSPAPER GRID */
 .grid{
   display:grid;
   grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:20px;
+  gap:18px;
 }
+
 .card{
-  background:var(--card);
-  border:1px solid var(--border);
+  background:#fff;
+  border:1px solid #e4eaf0;
   border-radius:22px;
-  padding:14px 14px 16px;
-  box-shadow:0 5px 18px rgba(13,45,75,.07);
+  padding:14px 22px 18px;
+  min-height:275px;
+  box-shadow:0 6px 22px rgba(22,48,77,.07);
+  display:flex;
+  flex-direction:column;
   overflow:hidden;
-  transition:transform .25s ease,box-shadow .25s ease;
+  transition:transform .18s ease,box-shadow .18s ease;
 }
 .card:hover{
-  transform:translateY(-4px);
-  box-shadow:0 12px 28px rgba(13,45,75,.13);
+  transform:translateY(-2px);
+  box-shadow:0 10px 28px rgba(22,48,77,.11);
 }
-.logo-box{
-  height:116px;
-  display:flex;align-items:center;justify-content:center;
-  padding:7px 12px 3px;
-  background:#fff;
+
+.logo{
+  height:110px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-bottom:8px;
+  flex:0 0 110px;
 }
-.paper-logo{
-  max-width:100%;width:auto;height:100%;object-fit:contain;
+.logo svg{
+  width:100%;
+  height:100%;
+  max-width:420px;
+  display:block;
 }
+
 .card h2{
-  margin:9px 9px 3px;
-  font-size:21px;line-height:1.18;
-  font-weight:800;letter-spacing:-.4px;
+  margin:0 0 0;
+  font-size:23px;
+  line-height:1.12;
+  letter-spacing:-.5px;
+  color:#11243e;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
 }
-.desc{
-  margin:0 9px 10px;
-  color:var(--muted);
-  font-size:15px;line-height:1.35;
-}
-.meta{
-  margin:0 9px 13px;
-  display:flex;justify-content:space-between;align-items:center;
-  gap:10px;color:#536170;font-size:14px;
-}
-.lang{font-weight:700;color:#6d7985}
+
 .read{
-  position:relative;overflow:hidden;
-  margin:0 9px;
-  min-height:54px;
+  margin-top:auto;
+  width:100%;
+  min-height:56px;
+  height:56px;
   border-radius:16px;
-  display:flex;align-items:center;justify-content:center;
-  color:white;font-size:17px;font-weight:800;
-  background:var(--accent,#0877c9);
-  box-shadow:0 5px 12px color-mix(in srgb, var(--accent,#0877c9) 28%, transparent);
-  transition:transform .18s ease,filter .18s ease;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 17px;
+  font-size:18px;
+  font-weight:700;
+  box-shadow:inset 0 -1px 0 rgba(0,0,0,.12);
+  transition:filter .15s ease,transform .15s ease,box-shadow .15s ease;
 }
-.read:before{
+.read:hover{
+  filter:brightness(.96);
+  transform:translateY(-1px);
+  box-shadow:0 7px 18px rgba(0,0,0,.12);
+}
+.read:active{transform:scale(.985)}
+.read-label{display:flex;align-items:center;gap:12px}
+.book{
+  width:23px;height:20px;
+  border:2px solid currentColor;
+  border-radius:3px;
+  position:relative;
+}
+.book:after{
   content:"";
-  position:absolute;inset:0;
-  background:linear-gradient(110deg,transparent 25%,rgba(255,255,255,.35) 48%,transparent 70%);
-  transform:translateX(-120%);
-  animation:shine 3.2s infinite;
+  position:absolute;
+  left:50%;top:1px;bottom:1px;
+  border-left:2px solid currentColor;
 }
-.read span{position:relative;z-index:1}
-.read:hover{transform:scale(1.015);filter:brightness(1.05)}
-.read:active{transform:scale(.98)}
-@keyframes shine{
-  0%,55%{transform:translateX(-120%)}
-  80%,100%{transform:translateX(120%)}
-}
+.external{font-size:25px;line-height:1}
 
+.blue{background:#0c70c9}
+.orange{background:#f66d0b}
+.red{background:#d30d10}
+.navy{background:#0963b6}
+.teal{background:#0792ad}
+.green{background:#08ad61}
+.purple{background:#6a27c8}
+.lokmat{background:#ed2633}
+
+/* FOOTER */
 .footer{
-  width:calc(100% - 56px);max-width:970px;
+  width:min(1120px,calc(100% - 36px));
   margin:0 auto 18px;
-  padding:13px 15px;
-  text-align:center;
-  color:#596471;
-  background:#f0f3f6;
+  background:#eef1f5;
   border-radius:16px;
+  min-height:54px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:#5e6875;
   font-size:14px;
+  padding:12px 16px;
 }
-.heart{color:#e52335}
 
-@media(max-width:600px){
-  .header{height:92px;padding:7px 15px}
-  .menu{left:12px}.search{right:12px}
-  .brand{width:min(68vw,350px);height:70px}
-  .notice{
-    width:calc(100% - 40px);
-    margin:10px auto 18px;
-    border-radius:18px;
-    min-height:70px;
-    padding:10px 13px;
-    font-size:15px;
+/* MOBILE — keep 2 columns and make every newspaper name fully visible */
+@media(max-width:760px){
+  .header{
+    height:70px;
+    grid-template-columns:42px 1fr 42px;
+    padding:0 7px;
   }
-  .notice-left{gap:9px;line-height:1.2}
-  .updated{padding:8px 11px;white-space:nowrap;font-size:13px}
-  .dot{width:9px;height:9px;margin-right:6px}
-  .container{width:calc(100% - 40px)}
+  .header-btn{width:38px;height:38px;font-size:25px}
+  .brand-title{font-size:25px;letter-spacing:-1px}
+  .brand-subtitle{font-size:6.5px;letter-spacing:1.8px;margin-top:4px}
+
+  .container{
+    width:calc(100% - 16px);
+    padding:8px 0 8px;
+  }
+
+  .info-bar{
+    min-height:50px;
+    height:50px;
+    border-radius:15px;
+    padding:7px 9px;
+    gap:6px;
+    margin-bottom:9px;
+  }
+  .info-left{
+    font-size:11px;
+    line-height:1.15;
+    gap:6px;
+  }
+  .info-icon{
+    flex:0 0 21px;
+    width:21px;height:21px;
+    font-size:11px;
+    border-width:1.5px;
+  }
+  .updated{
+    font-size:9px;
+    padding:6px 7px;
+    border-radius:16px;
+  }
+  .dot{width:6px;height:6px;margin-right:4px}
+
   .grid{
     grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:12px;
+    gap:9px;
   }
-  .card{border-radius:17px;padding:9px 8px 10px}
-  .logo-box{height:92px;padding:4px 3px}
-  .card h2{font-size:15px;margin:7px 4px 2px}
-  .desc{font-size:11px;margin:0 4px 7px}
-  .meta{font-size:10px;margin:0 4px 8px}
+
+  .card{
+    height:145px;
+    min-height:145px;
+    padding:7px 10px 9px;
+    border-radius:16px;
+    box-shadow:0 3px 12px rgba(22,48,77,.065);
+  }
+  .card:hover{transform:none}
+
+  .logo{
+    height:61px;
+    min-height:61px;
+    flex:0 0 61px;
+    margin-bottom:5px;
+  }
+  .logo svg{max-width:100%;height:100%}
+
+  .card h2{
+    margin:0;
+    font-size:12.5px;
+    line-height:1.1;
+    letter-spacing:-.2px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+
   .read{
-    min-height:42px;border-radius:12px;
-    font-size:12px;margin:0 3px;
+    margin-top:auto;
+    min-height:39px;
+    height:39px;
+    border-radius:10px;
+    padding:0 9px;
+    font-size:11px;
+    letter-spacing:-.1px;
+    box-shadow:0 4px 10px rgba(12,112,201,.15),inset 0 -1px 0 rgba(0,0,0,.12);
   }
-  .footer{width:calc(100% - 40px);font-size:12px}
+  .read-label{gap:6px;white-space:nowrap}
+  .book{width:15px;height:13px;border-width:1.4px;border-radius:2px}
+  .book:after{left:50%;top:1px;bottom:1px;border-left-width:1.2px}
+  .external{font-size:15px}
+
+  .footer{
+    width:calc(100% - 16px);
+    min-height:32px;
+    height:32px;
+    margin:0 auto 7px;
+    border-radius:10px;
+    font-size:8.5px;
+    padding:5px 6px;
+    white-space:nowrap;
+  }
 }
-@media(min-width:1000px){
-  .container,.notice,.footer{max-width:1000px}
-  .grid{gap:22px}
-  .logo-box{height:130px}
+
+/* Very small phones */
+@media(max-width:380px){
+  .header{height:62px;grid-template-columns:37px 1fr 37px}
+  .header-btn{width:34px;height:34px;font-size:22px}
+  .brand-title{font-size:22px}
+  .brand-subtitle{font-size:5.5px;letter-spacing:1.5px}
+
+  .container{width:calc(100% - 12px);padding-top:6px}
+  .info-bar{height:44px;min-height:44px;margin-bottom:7px;padding:6px 7px}
+  .info-left{font-size:9.5px}
+  .info-icon{flex-basis:18px;width:18px;height:18px;font-size:9px}
+  .updated{font-size:8px;padding:5px 6px}
+  .grid{gap:6px}
+
+  .card{
+    height:132px;
+    min-height:132px;
+    padding:6px 8px 7px;
+    border-radius:14px;
+  }
+  .logo{
+    height:54px;
+    min-height:54px;
+    flex-basis:54px;
+    margin-bottom:4px;
+  }
+  .card h2{font-size:11px}
+  .read{
+    height:35px;
+    min-height:35px;
+    border-radius:9px;
+    font-size:9.5px;
+    padding:0 7px;
+  }
+  .book{width:13px;height:11px}
+  .external{font-size:13px}
+  .footer{
+    width:calc(100% - 12px);
+    height:27px;
+    min-height:27px;
+    font-size:7px;
+    margin-bottom:5px;
+  }
+}
+
+@media(min-width:761px) and (max-width:980px){
+  .brand-title{font-size:35px}
 }
 </style>
 </head>
-<body>
 
+<body>
 <header class="header">
-  <button class="menu" aria-label="Menu"><span></span></button>
-  <img class="brand" src="assets/goa-e-papers-logo.svg" alt="GOA E-PAPERS">
-  <button class="search" aria-label="Search"></button>
+  <button class="header-btn" aria-label="Menu">☰</button>
+  <div class="brand">
+    <div class="brand-title">GOA <span>E-PAPERS</span></div>
+    <div class="brand-subtitle">ALL GOAN NEWSPAPERS IN ONE PLACE</div>
+  </div>
+  <button class="header-btn search-btn" id="searchButton" aria-label="Search">⌕</button>
 </header>
 
-<section class="notice">
-  <div class="notice-left">
-    <div class="notice-icon">▣</div>
-    <div>Read latest e-papers of Goa's leading newspapers</div>
-  </div>
-  <div class="updated"><span class="dot"></span>Updated Daily</div>
-</section>
-
 <main class="container">
-  <div id="newspapers" class="grid"></div>
+  <div class="info-bar">
+    <div class="info-left">
+      <div class="info-icon">▤</div>
+      <div>Read latest e-papers of Goa's leading newspapers</div>
+    </div>
+    <div class="updated"><span class="dot"></span><span id="updatedDate">Updated</span></div>
+  </div>
+
+  <section class="grid" id="newspapers"></section>
 </main>
 
 <footer class="footer">
-  Made with <span class="heart">♥</span> for Goa &nbsp;|&nbsp; Stay Informed &nbsp;|&nbsp; Read Local &nbsp;|&nbsp; Support Journalism
+  Made with ♥ for Goa&nbsp;&nbsp; | &nbsp;&nbsp;Stay Informed&nbsp;&nbsp; | &nbsp;&nbsp;Read Local&nbsp;&nbsp; | &nbsp;&nbsp;Support Journalism
 </footer>
 
 <script>
-const fallback = [
-  {name:"THE GOAN EVERYDAY",description:"Goa's Leading English Daily Newspaper",language:"English",color:"#0877c9",logo:"assets/goan-everyday.svg",url:"https://epaper.thegoan.net/edition/THE-GOAN-EVERYDAY/10711/"},
-  {name:"GOAN VARTA",description:"Goa's Leading Marathi Daily Newspaper",language:"Marathi",color:"#ff6a00",logo:"assets/goan-varta.svg",url:"https://epaper.thegoan.net/edition/GOAN-VARTA/9849/"},
-  {name:"BHAANGARBHUIN",description:"Goa's Konkani Daily Newspaper",language:"Konkani",color:"#d10b0b",logo:"assets/bhaangarbhuin.svg",url:"https://epaper.thegoan.net/edition/BHAANGARBHUIN/23246/"},
-  {name:"KONKANSAAD",description:"KONKANSAAD Marathi Newspaper",language:"Marathi",color:"#0877c9",logo:"assets/konkansad.svg",url:"https://epaper.thegoan.net/edition/KONKANSAAD/37473/"},
-  {name:"O HERALDO",description:"Goa's Oldest English Daily Newspaper",language:"English",color:"#078aa8",logo:"assets/o-heraldo.svg",url:"https://epaper.heraldgoa.in/epaper/oheraldo/04-09-2026"},
-  {name:"DAINIK HERALD",description:"Goa's Leading Marathi Daily Newspaper",language:"Marathi",color:"#0bb45a",logo:"assets/dainik-herald.svg",url:"https://epaper.heraldgoa.in/epaper/dainik-herald/04-09-2026"},
-  {name:"NAVHIND TIMES",description:"Goa's Trusted English Daily Newspaper",language:"English",color:"#6d2acb",logo:"assets/navhind-times.svg",url:"https://epaper.navhindtimes.in/"},
-  {name:"LOKMAT (GOA EDITION)",description:"Maharashtra's No.1 Marathi Daily (Goa Edition)",language:"Marathi",color:"#ed2630",logo:"assets/lokmat.svg",url:"https://epaper.navhindtimes.in/"}
+const fallbackDate = new Date();
+
+const papers = [
+  {id:"goan-everyday",name:"THE GOAN EVERYDAY",color:"blue",logo:"goan",fallback:"https://epaper.thegoan.net/"},
+  {id:"goan-varta",name:"GOAN VARTA",color:"orange",logo:"varta",fallback:"https://epaper.thegoan.net/"},
+  {id:"bhaangarbhuin",name:"BHAANGARBHUIN",color:"red",logo:"bhaangarbhuin",fallback:"https://epaper.thegoan.net/"},
+  {id:"konkansaad",name:"KONKANSAAD",color:"navy",logo:"konkansaad",fallback:"https://epaper.thegoan.net/"},
+  {id:"o-heraldo",name:"O HERALDO",color:"teal",logo:"heraldo",fallback:"https://epaper.heraldgoa.in/"},
+  {id:"dainik-herald",name:"DAINIK HERALD",color:"green",logo:"dainik",fallback:"https://epaper.heraldgoa.in/"},
+  {id:"navhind",name:"NAVHIND TIMES",color:"purple",logo:"navhind",fallback:"https://epaper.navhindtimes.in/"},
+  {id:"lokmat",name:"LOKMAT (GOA EDITION)",color:"lokmat",logo:"lokmat",fallback:"https://epaper.lokmat.com/"}
 ];
 
-function esc(v){return String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
-
-async function load(){
-  let papers=fallback;
-  try{
-    const r=await fetch("data.json?"+Date.now(),{cache:"no-store"});
-    if(r.ok){
-      const d=await r.json();
-      if(Array.isArray(d.papers)&&d.papers.length) papers=d.papers.map((p,i)=>({
-        ...fallback[i],
-        ...p,
-        logo:p.logo || fallback[i]?.logo
-      }));
-    }
-  }catch(e){}
-  document.getElementById("newspapers").innerHTML=papers.map((p,i)=>`
-    <article class="card">
-      <div class="logo-box">
-        <img class="paper-logo" src="${esc(p.logo||fallback[i]?.logo||"")}" alt="${esc(p.name)} logo"
-             onerror="this.style.display='none'">
-      </div>
-      <h2>${esc(p.name)}</h2>
-      <p class="desc">${esc(p.description||"Goa Newspaper")}</p>
-      <div class="meta">
-        <span class="lang">${esc(p.language||"Newspaper")}</span>
-        <span>Published: <b>${esc(p.published||"Today")}</b></span>
-      </div>
-      <a class="read" style="--accent:${esc(p.color||fallback[i]?.color||"#0877c9")}"
-         href="${esc(p.url||"#")}" target="_blank" rel="noopener noreferrer">
-        <span>▣ &nbsp; Read Newspaper &nbsp; ↗</span>
-      </a>
-    </article>`).join("");
+function fmtDate(d){
+  return d.toLocaleDateString("en-IN",{day:"2-digit",month:"short",year:"numeric"});
 }
-load();
+function isoDate(d){
+  const y=d.getFullYear(),m=String(d.getMonth()+1).padStart(2,"0"),day=String(d.getDate()).padStart(2,"0");
+  return `${y}-${m}-${day}`;
+}
+function ddmmyyyy(d){
+  const y=d.getFullYear(),m=String(d.getMonth()+1).padStart(2,"0"),day=String(d.getDate()).padStart(2,"0");
+  return `${day}-${m}-${y}`;
+}
+
+function logoSvg(type){
+  if(type==="goan") return `
+  <svg viewBox="0 0 520 120" role="img" aria-label="The Goan">
+    <text x="260" y="57" text-anchor="middle" font-family="Georgia,serif" font-size="58" font-weight="700" fill="#090909">THE GOAN</text>
+    <line x1="145" y1="73" x2="375" y2="73" stroke="#159bc5" stroke-width="3"/>
+    <text x="260" y="101" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" letter-spacing="7" fill="#222">EVERYDAY</text>
+  </svg>`;
+
+  if(type==="varta") return `
+  <svg viewBox="0 0 520 120" role="img" aria-label="Goan Varta">
+    <text x="260" y="38" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" fill="#e66b28">आपली बातमी, आपला आवाज...</text>
+    <text x="260" y="91" text-anchor="middle" font-family="Noto Sans Devanagari,Arial,sans-serif" font-size="57" font-weight="800" fill="#111">गोवन वार्ता</text>
+  </svg>`;
+
+  if(type==="bhaangarbhuin") return `
+  <svg viewBox="0 0 520 120" role="img" aria-label="Bhaangarbhuin">
+    <circle cx="82" cy="62" r="34" fill="#d31622"/>
+    <path d="M82 31 L69 79 L82 68 L95 79 Z" fill="#fff"/>
+    <text x="315" y="40" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" fill="#222">सत्याची बीज - जनतेची शक्ती</text>
+    <text x="315" y="91" text-anchor="middle" font-family="Noto Sans Devanagari,Arial,sans-serif" font-size="52" font-weight="800" fill="#111">भांगरभुइं</text>
+  </svg>`;
+
+  if(type==="konkansaad") return `
+  <svg viewBox="0 0 520 120" role="img" aria-label="Konkansaad">
+    <text x="260" y="30" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" fill="#111">जनतेचा आवाज</text>
+    <text x="260" y="82" text-anchor="middle" font-family="Noto Sans Devanagari,Arial,sans-serif" font-size="59" font-weight="800" fill="#df1717">कोकणसाद</text>
+    <line x1="120" y1="96" x2="400" y2="96" stroke="#1266ae" stroke-width="4"/>
+  </svg>`;
+
+  if(type==="heraldo") return `
+  <svg viewBox="0 0 520 120" role="img" aria-label="O Heraldo">
+    <text x="260" y="60" text-anchor="middle" font-family="Georgia,serif" font-size="57" font-weight="700" fill="#050505">O HERALDO</text>
+    <line x1="145" y1="77" x2="375" y2="77" stroke="#139bc4" stroke-width="3"/>
+    <text x="260" y="104" text-anchor="middle" font-family="Arial,sans-serif" font-size="14" letter-spacing="2" fill="#172e4c">VOICE OF GOA SINCE 1900</text>
+  </svg>`;
+
+  if(type==="dainik") return `
+  <svg viewBox="0 0 520 120" role="img" aria-label="Dainik Herald">
+    <text x="260" y="71" text-anchor="middle" font-family="Noto Sans Devanagari,Arial,sans-serif" font-size="59" font-weight="800" fill="#111">दैनिक हेराल्ड</text>
+    <line x1="155" y1="88" x2="365" y2="88" stroke="#1485c1" stroke-width="4"/>
+    <text x="260" y="108" text-anchor="middle" font-family="Noto Sans Devanagari,Arial,sans-serif" font-size="12" fill="#222">गोव्याची आपली बातमी</text>
+  </svg>`;
+
+  if(type==="navhind") return `
+  <svg viewBox="0 0 520 120" role="img" aria-label="The Navhind Times">
+    <circle cx="72" cy="59" r="30" fill="#e9a91e"/>
+    <path d="M45 60 Q72 36 99 60 Q72 84 45 60Z" fill="#1163a7"/>
+    <text x="315" y="60" text-anchor="middle" font-family="Georgia,serif" font-size="42" font-weight="700" fill="#1260a4">THE NAVHIND TIMES</text>
+    <text x="315" y="88" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" letter-spacing="2" fill="#111">THE NEWSPAPER YOU CAN TRUST</text>
+  </svg>`;
+
+  return `
+  <svg viewBox="0 0 520 120" role="img" aria-label="Lokmat Goa Edition">
+    <text x="260" y="67" text-anchor="middle" font-family="Noto Sans Devanagari,Arial,sans-serif" font-size="61" font-weight="800" fill="#df1e27">लोकमत</text>
+    <text x="260" y="101" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" font-weight="800" fill="#111">GOA EDITION</text>
+  </svg>`;
+}
+
+function makeFallbackLink(id){
+  const d=new Date();
+  if(id==="o-heraldo") return `https://epaper.heraldgoa.in/epaper/oheraldo/${ddmmyyyy(d)}`;
+  if(id==="dainik-herald") return `https://epaper.heraldgoa.in/epaper/dainik-herald/${ddmmyyyy(d)}`;
+  if(id==="lokmat") return `https://epaper.lokmat.com/main-editions/Goa%20Main/${isoDate(d)}/1`;
+  return papers.find(p=>p.id===id)?.fallback || "#";
+}
+
+function render(data){
+  const list=Array.isArray(data?.papers)?data.papers:[];
+  const byName={};
+  list.forEach(p=>byName[(p.name||"").toLowerCase().trim()]=p);
+
+  const aliases={
+    "goan-everyday":["the goan everyday","the goan"],
+    "goan-varta":["goan varta"],
+    "bhaangarbhuin":["bhaangarbhuin"],
+    "konkansaad":["konkansaad"],
+    "o-heraldo":["o heraldo"],
+    "dainik-herald":["dainik herald"],
+    "navhind":["navhind times"],
+    "lokmat":["lokmat (goa edition)","lokmat"]
+  };
+
+  const container=document.getElementById("newspapers");
+
+  container.innerHTML=papers.map(p=>{
+    let found=null;
+    (aliases[p.id]||[]).some(n=>{
+      if(byName[n]){found=byName[n];return true}
+      return false;
+    });
+
+    const link=found?.edition_url || found?.read_url || makeFallbackLink(p.id);
+
+    return `
+      <article class="card" data-name="${p.name}">
+        <div class="logo">${logoSvg(p.logo)}</div>
+        <h2>${p.name}</h2>
+        <a class="read ${p.color}" href="${link}" target="_blank" rel="noopener noreferrer" aria-label="Read ${p.name}">
+          <span class="read-label"><span class="book"></span>Read Newspaper</span>
+          <span class="external">↗</span>
+        </a>
+      </article>`;
+  }).join("");
+}
+
+function setUpdatedDate(){
+  document.getElementById("updatedDate").textContent="Updated: "+fmtDate(new Date());
+}
+
+async function loadData(){
+  setUpdatedDate();
+  try{
+    const r=await fetch("data.json?t="+Date.now(),{cache:"no-store"});
+    if(!r.ok) throw new Error("data.json not found");
+    render(await r.json());
+  }catch(e){
+    render(null);
+  }
+}
+
+document.getElementById("searchButton").addEventListener("click",()=>{
+  const q=prompt("Search newspaper");
+  if(q===null)return;
+  const query=q.toLowerCase().trim();
+  document.querySelectorAll(".card").forEach(card=>{
+    card.style.display=card.dataset.name.toLowerCase().includes(query)?"":"none";
+  });
+});
+
+loadData();
 </script>
 </body>
 </html>
