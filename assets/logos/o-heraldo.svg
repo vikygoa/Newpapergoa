@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 220">
+<rect width="900" height="220" rx="24" fill="#fff"/>
+<text x="450" y="112" text-anchor="middle" font-family="Georgia,serif" font-weight="700" font-size="82" fill="#111">O HERALDO</text>
+<path d="M250 140H650" stroke="#159bd7" stroke-width="5"/>
+<text x="450" y="178" text-anchor="middle" font-family="Arial,sans-serif" letter-spacing="5" font-size="25" fill="#159bd7">VOICE OF GOA SINCE 1900</text>
+</svg>

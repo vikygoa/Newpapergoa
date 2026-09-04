@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 220">
+<rect width="900" height="220" rx="24" fill="#fff"/>
+<text x="450" y="118" text-anchor="middle" font-family="Noto Sans Devanagari,Arial,sans-serif" font-weight="700" font-size="96" fill="#e51b23">लोकमत</text>
+<path d="M280 145H620" stroke="#e51b23" stroke-width="7"/>
+<text x="450" y="183" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="25" fill="#111">GOA EDITION</text>
+</svg>

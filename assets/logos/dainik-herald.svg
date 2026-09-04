@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 220">
+<rect width="900" height="220" rx="24" fill="#fff"/>
+<text x="450" y="120" text-anchor="middle" font-family="Noto Sans Devanagari,Arial,sans-serif" font-weight="700" font-size="82" fill="#111">दैनिक हेराल्ड</text>
+<path d="M260 150H640" stroke="#159bd7" stroke-width="6"/>
+<text x="450" y="55" text-anchor="middle" font-family="Noto Sans Devanagari,Arial,sans-serif" font-size="23" fill="#444">गोयची आपली बातमी</text>
+</svg>

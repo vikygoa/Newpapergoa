@@ -1,1 +1,7 @@
-
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 220">
+<rect width="900" height="220" rx="24" fill="#fff"/>
+<circle cx="130" cy="110" r="58" fill="#c91522"/>
+<path d="M130 62 L103 145 L130 126 L157 145 Z" fill="#fff"/>
+<text x="545" y="132" text-anchor="middle" font-family="Noto Sans Devanagari,Arial,sans-serif" font-weight="700" font-size="82" fill="#111">भांगरभूंय</text>
+<text x="545" y="55" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" fill="#555">नम्रतेची बाजू • जनतेची बाजू</text>
+</svg>
