@@ -2,46 +2,76 @@
   "updated": "2026-09-04 12:43 UTC",
   "papers": [
     {
+      "id": "the-goan-everyday",
       "name": "THE GOAN EVERYDAY",
       "description": "Goa's Leading English Daily Newspaper",
-      "published": "Sep 04, 2026",
+      "language": "English",
       "edition_url": "https://epaper.thegoan.net/edition/THE-GOAN-EVERYDAY/10711",
-      "read_url": "https://www.readwhere.com/read/r/4195117"
+      "read_url": "https://www.readwhere.com/read/r/4195117",
+      "logo": "assets/logos/the-goan-everyday.svg"
     },
     {
+      "id": "goan-varta",
       "name": "GOAN VARTA",
       "description": "Goa's Leading Marathi Daily Newspaper",
-      "published": "Sep 04, 2026",
+      "language": "Marathi",
       "edition_url": "https://epaper.thegoan.net/edition/GOAN-VARTA/9849",
-      "read_url": "https://www.readwhere.com/read/r/4195086"
+      "read_url": "https://www.readwhere.com/read/r/4195086",
+      "logo": "assets/logos/goan-varta.svg"
     },
     {
+      "id": "bhaangar-bhuin",
       "name": "BHAANGARBHUIN",
       "description": "Goa's Konkani Daily Newspaper",
-      "published": "Sep 04, 2026",
+      "language": "Konkani",
       "edition_url": "https://epaper.thegoan.net/edition/BHAANGARBHUIN/23246",
-      "read_url": "https://www.readwhere.com/read/r/4195029"
+      "read_url": "https://www.readwhere.com/read/r/4195029",
+      "logo": "assets/logos/bhaangar-bhuin.svg"
     },
     {
+      "id": "konkansaad",
       "name": "KONKANSAAD",
       "description": "KONKANSAAD Marathi Newspaper",
-      "published": "Sep 04, 2026",
+      "language": "Marathi",
       "edition_url": "https://epaper.thegoan.net/edition/KONKANSAAD/37473",
-      "read_url": "https://www.readwhere.com/read/r/4194961"
+      "read_url": "https://www.readwhere.com/read/r/4194961",
+      "logo": "assets/logos/konkansaad.svg"
     },
     {
+      "id": "o-heraldo",
       "name": "O HERALDO",
       "description": "Goa's English Daily Newspaper",
-      "published": "Sep 04, 2026",
-      "edition_url": "https://epaper.heraldgoa.in/epaper/oheraldo/04-09-2026",
-      "read_url": "https://epaper.heraldgoa.in/epaper/oheraldo/04-09-2026"
+      "language": "English",
+      "edition_url": "https://epaper.heraldgoa.in/epaper/oheraldo/",
+      "read_url": "https://epaper.heraldgoa.in/epaper/oheraldo/",
+      "logo": "assets/logos/o-heraldo.svg"
     },
     {
+      "id": "dainik-herald",
       "name": "DAINIK HERALD",
       "description": "Goa's Marathi Daily Newspaper",
-      "published": "Sep 04, 2026",
-      "edition_url": "https://epaper.heraldgoa.in/epaper/dainik-herald/04-09-2026",
-      "read_url": "https://epaper.heraldgoa.in/epaper/dainik-herald/04-09-2026"
+      "language": "Marathi",
+      "edition_url": "https://epaper.heraldgoa.in/epaper/dainik-herald/",
+      "read_url": "https://epaper.heraldgoa.in/epaper/dainik-herald/",
+      "logo": "assets/logos/dainik-herald.svg"
+    },
+    {
+      "id": "navhind-times",
+      "name": "NAVHIND TIMES",
+      "description": "Goa's Trusted English Daily Newspaper",
+      "language": "English",
+      "edition_url": "https://epaper.navhindtimes.in/mainpage.aspx",
+      "read_url": "https://epaper.navhindtimes.in/mainpage.aspx",
+      "logo": "assets/logos/navhind-times.svg"
+    },
+    {
+      "id": "lokmat-goa",
+      "name": "LOKMAT (GOA EDITION)",
+      "description": "Marathi Daily Newspaper — Goa Edition",
+      "language": "Marathi",
+      "edition_url": "https://epaper.lokmat.com/main-editions/Goa%20Main/-1/1",
+      "read_url": "https://epaper.lokmat.com/main-editions/Goa%20Main/-1/1",
+      "logo": "assets/logos/lokmat-goa.svg"
     }
   ]
 }
