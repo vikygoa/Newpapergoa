@@ -1,14 +1,14 @@
 {
-  "updated": "2026-09-11 01:15 UTC",
+  "updated": "2026-09-12 01:18 UTC",
   "papers": [
     {
       "id": "the-goan-everyday",
       "name": "THE GOAN EVERYDAY",
       "description": "Goa's Leading English Daily Newspaper",
       "language": "English",
-      "published": "Sep 11, 2026",
+      "published": "Sep 12, 2026",
       "edition_url": "https://epaper.thegoan.net/edition/THE-GOAN-EVERYDAY/10711",
-      "read_url": "https://www.readwhere.com/read/r/4197711",
+      "read_url": "https://www.readwhere.com/read/r/4198100",
       "logo": "assets/logos/the-goan-everyday.svg"
     },
     {
@@ -16,9 +16,9 @@
       "name": "GOAN VARTA",
       "description": "Goa's Leading Marathi Daily Newspaper",
       "language": "Marathi",
-      "published": "Sep 11, 2026",
+      "published": "Sep 12, 2026",
       "edition_url": "https://epaper.thegoan.net/edition/GOAN-VARTA/9849",
-      "read_url": "https://www.readwhere.com/read/r/4197651",
+      "read_url": "https://www.readwhere.com/read/r/4198027",
       "logo": "assets/logos/goan-varta.svg"
     },
     {
@@ -26,9 +26,9 @@
       "name": "BHAANGARBHUIN",
       "description": "Goa's Konkani Daily Newspaper",
       "language": "Konkani",
-      "published": "Sep 11, 2026",
+      "published": "Sep 12, 2026",
       "edition_url": "https://epaper.thegoan.net/edition/BHAANGARBHUIN/23246",
-      "read_url": "https://www.readwhere.com/read/r/4197622",
+      "read_url": "https://www.readwhere.com/read/r/4198047",
       "logo": "assets/logos/bhaangar-bhuin.svg"
     },
     {
@@ -36,9 +36,9 @@
       "name": "KONKANSAAD",
       "description": "KONKANSAAD Marathi Newspaper",
       "language": "Marathi",
-      "published": "Sep 11, 2026",
+      "published": "Sep 12, 2026",
       "edition_url": "https://epaper.thegoan.net/edition/KONKANSAAD/37473",
-      "read_url": "https://www.readwhere.com/read/r/4197556",
+      "read_url": "https://www.readwhere.com/read/r/4197932",
       "logo": "assets/logos/konkansaad.svg"
     },
     {
@@ -64,7 +64,7 @@
       "name": "NAVHIND TIMES",
       "description": "Goa's Trusted English Daily Newspaper",
       "language": "English",
-      "published": "Sep 11, 2026",
+      "published": "Sep 12, 2026",
       "edition_url": "https://epaper.navhindtimes.in/mainpage.aspx",
       "read_url": "https://epaper.navhindtimes.in/mainpage.aspx",
       "logo": "assets/logos/navhind-times.svg"
@@ -74,7 +74,7 @@
       "name": "LOKMAT (GOA EDITION)",
       "description": "Marathi Daily Newspaper — Goa Edition",
       "language": "Marathi",
-      "published": "Sep 11, 2026",
+      "published": "Sep 12, 2026",
       "edition_url": "https://epaper.lokmat.com/main-editions/Goa%20Main/-1/1",
       "read_url": "https://epaper.lokmat.com/main-editions/Goa%20Main/-1/1",
       "logo": "assets/logos/lokmat-goa.svg"
