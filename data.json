@@ -1,14 +1,14 @@
 {
-  "updated": "2026-09-14 01:17 UTC",
+  "updated": "2026-09-15 01:37 UTC",
   "papers": [
     {
       "id": "the-goan-everyday",
       "name": "THE GOAN EVERYDAY",
       "description": "Goa's Leading English Daily Newspaper",
       "language": "English",
-      "published": "Sep 14, 2026",
+      "published": "Sep 15, 2026",
       "edition_url": "https://epaper.thegoan.net/edition/THE-GOAN-EVERYDAY/10711",
-      "read_url": "https://www.readwhere.com/read/r/4198860",
+      "read_url": "https://www.readwhere.com/read/r/4198774",
       "logo": "assets/logos/the-goan-everyday.svg"
     },
     {
@@ -64,7 +64,7 @@
       "name": "NAVHIND TIMES",
       "description": "Goa's Trusted English Daily Newspaper",
       "language": "English",
-      "published": "Sep 14, 2026",
+      "published": "Sep 15, 2026",
       "edition_url": "https://epaper.navhindtimes.in/mainpage.aspx",
       "read_url": "https://epaper.navhindtimes.in/mainpage.aspx",
       "logo": "assets/logos/navhind-times.svg"
@@ -74,7 +74,7 @@
       "name": "LOKMAT (GOA EDITION)",
       "description": "Marathi Daily Newspaper — Goa Edition",
       "language": "Marathi",
-      "published": "Sep 14, 2026",
+      "published": "Sep 15, 2026",
       "edition_url": "https://epaper.lokmat.com/main-editions/Goa%20Main/-1/1",
       "read_url": "https://epaper.lokmat.com/main-editions/Goa%20Main/-1/1",
       "logo": "assets/logos/lokmat-goa.svg"
